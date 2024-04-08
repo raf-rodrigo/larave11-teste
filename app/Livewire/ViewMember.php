@@ -5,18 +5,26 @@ namespace App\Livewire;
 use App\Models\RegisterMember;
 use Livewire\Component;
 use Livewire\WithPagination;
+use WireUi\Traits\Actions;
 
 class ViewMember extends Component
 {
+    use Actions;
     use WithPagination;
 
 
     public $search = '';
 
-    public function delete()
+    public function delete(int $id): void
     {
-        dd('aqui');
+        RegisterMember::find($id)->delete();
+        $this->notification()->info(
+            $title = 'Sócio excluído',
+            $description = 'Sócio excluído com sucesso.',
+        );
+        $this->render();
     }
+
 
     public function render()
     {

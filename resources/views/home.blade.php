@@ -3,7 +3,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <div class="flex flex-col">
+                    <div class="flex flex-col py-11">
                         <img class="w-1/2" src="{{ asset('logo_keepcloud.png') }}" alt="logo da Keep Cloud" />
                         <div class="flex flex-col text-center">
                             <h1 class="text-2xl m-6">Bem Vindo ao Sistema de Cadastro de Sócio.</h1>

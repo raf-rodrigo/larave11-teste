@@ -8,6 +8,7 @@ Esta rodando em docker - o Docker precisa ser instalado no Sistema Operacional
 2. passo: subir o container como o comando sail up -d.<br>
    Obs.: subindo os container o comando php artisan serve já foi realizado e a página é **localhost**
 
-3. passa: migrar o bando de dados - sail php artisan migrate
+3. passo: migrar o bando de dados - sail php artisan migrate
 
+4. passo: rodar o comando sail npm run dev.
 Obs.: todos os comando de ser rodados com: __sail {código}__

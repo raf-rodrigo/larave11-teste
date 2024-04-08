@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" xmlns:wireui="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
-
+    @wireUiScripts
 </head>
 <body class="font-sans antialiased">
 <div class="min-h-screen bg-gray-100 dark:bg-gray-900 h-full">
@@ -33,7 +33,7 @@
     <main>
 
         @if(session('msg'))
-            <div class="m-3 w-screen h-8 bg-blue-950 text-center text-white">
+            <div class="m-3 w-screen h-8 bg-blue-950 text-center text-white duration-1000">
                 <span class="mt-2">{{ session('msg') }}</span>
             </div>
         @endif

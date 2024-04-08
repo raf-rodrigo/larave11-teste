@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\RegisterMember;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class RegisterMemberController extends Controller
 {
@@ -31,4 +32,49 @@ class RegisterMemberController extends Controller
 
        return redirect('/home')->with('msg', 'Sócio cadastrado com sucesso.');
     }
+
+    public function show(int $id)
+    {
+        $register = RegisterMember::findOrFail($id);
+
+        return view('show-member', ['register'=>$register]);
+    }
+
+    public function delete(int $id)
+    {
+
+        $response = RegisterMember::findOrFail($id)->delete();
+
+
+
+        return redirect('/visualizar_socio')->with('msg', 'Sócio excluído com sucesso.');
+
+
+    }
+
+    public function update(Request $request)
+    {
+//        dd($request->all());
+        DB::table('register_members')
+            ->where('id', $request['id'])
+            ->update(
+                [
+                    'name' => $request['name'],
+                    'email' => $request['email'],
+                    'cellphone' => $request['cellphone'],
+                    'status' => $request['status'],
+                    'zipcode' => $request['zipcode'],
+                    'address' => $request['address'],
+                    'addressNumber' => $request['addressNumber'],
+                    'addressComplement' => $request['addressComplement'],
+                    'neighborhood' => $request['neighborhood'],
+                    'city' => $request['city'],
+                    'state' => $request['state'],
+                ]
+            );
+
+        return redirect('/visualizar_socio')->with('msg', 'Dados alterados com sucesso.');
+    }
+
+
 }

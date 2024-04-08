@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#customers-table td, #customers-table th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+#customers-table thead {
+    background-color: #18181b;
+    padding: 8px;
+}
+
+#customers-table tr:nth-child(even) {
+    background-color: #2d3748;
+}
+
+#customers-table tr:hover {
+    background-color: #6b7280;
+}
